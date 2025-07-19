@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PC Builder Runner</title>
+    <link rel="stylesheet" href="style/style.css" />
+  </head>
+  <body>
+    <div class="game-container">
+      <div id="start-screen" class="game-screen active">
+        <h1>PC Builder Runner</h1>
+        <p>Collect all PC components to build your dream computer!</p>
+        <p>Press <span class="key-highlight">Spacebar</span> to Jump</p>
+        <button id="start-button" class="btn">Start Game</button>
+      </div>
+
+      <div id="game-screen" class="game-screen">
+        <div id="game-area">
+          <div id="player"></div>
+        </div>
+        <div class="game-info">
+          <div class="info-box">Score: <span id="score">0</span></div>
+          <div class="info-box">
+            Components: <span id="components-collected">0/7</span>
+          </div>
+          <div
+            class="collected-components-display"
+            id="collected-components-display"
+          ></div>
+        </div>
+      </div>
+
+      <div id="game-over-screen" class="game-screen">
+        <h1>Game Over!</h1>
+        <p id="game-over-message">You crashed your build!</p>
+        <button id="restart-button" class="btn">Restart Game</button>
+      </div>
+
+      <div id="win-screen" class="game-screen">
+        <h1>Congratulations!</h1>
+        <p>You built your dream PC!</p>
+        <button id="win-restart-button" class="btn">Play Again</button>
+      </div>
+    </div>
+
+    <script type="module" src="js/Player.js"></script>
+    <script type="module" src="js/Game.js"></script>
+    <script type="module" src="script.js"></script>
+  </body>
+</html>
