@@ -104,6 +104,17 @@ body {
   box-shadow: none;
 }
 
+.debug-btn {
+  background-color: #ff9800;
+  font-size: 0.8em;
+  padding: 8px 12px;
+  margin-top: 5px;
+}
+
+.debug-btn:hover {
+  background-color: #f57c00;
+}
+
 #game-screen {
   display: flex;
   flex-direction: column;

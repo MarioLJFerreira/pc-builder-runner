@@ -47,6 +47,7 @@ export class Game {
         document.querySelector('#start-button').addEventListener('click', () => this.startGame());
         document.querySelector('#restart-button').addEventListener('click', () => this.resetGame());
         document.querySelector('#win-restart-button').addEventListener('click', () => this.resetGame());
+        document.querySelector('#debug-add-component').addEventListener('click', () => this.debugAddComponent());
         document.addEventListener('keydown', (event) => this.handleKeyDown(event));
     }
 
@@ -259,6 +260,22 @@ export class Game {
         const playerElement = document.createElement('div');
         playerElement.id = 'player';
         gameArea.appendChild(playerElement);
+    }
+
+    debugAddComponent() {
+        if (!this.isGameRunning) return;
+        
+        const missingComponents = this.requiredComponents.filter(component => 
+            !this.collectedComponents.has(component)
+        );
+        
+        if (missingComponents.length > 0) {
+            const randomComponent = missingComponents[Math.floor(Math.random() * missingComponents.length)];
+            this.collectedComponents.add(randomComponent);
+            this.updateCollectedComponentsDisplay();
+            this.componentsCollectedDisplay.textContent = `${this.collectedComponents.size}/7`;
+            this.checkWinCondition();
+        }
     }
 
     resetGameState() {
