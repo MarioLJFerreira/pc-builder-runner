@@ -18,7 +18,7 @@ export class Game {
         this.obstacles = [];
         this.components = [];
         this.score = 0;
-        this.gameSpeed = 5;
+        this.gameSpeed = 4;
         this.isGameOver = false;
         this.isGameRunning = false;
         this.animationFrameId = null;
@@ -26,12 +26,12 @@ export class Game {
         this.requiredComponents = ['CPU', 'GPU', 'Motherboard', 'RAM', 'Storage', 'Power Supply', 'Case'];
         this.collectedComponents = new Set();
         
-        this.obstacleSpawnInterval = 1500;
-        this.componentSpawnInterval = 5000;
+        this.obstacleSpawnInterval = 2000;
+        this.componentSpawnInterval = 6000;
         this.lastObstacleSpawnTime = 0;
         this.lastComponentSpawnTime = 0;
-        this.minDistanceBetweenObstacles = 300;
-        this.minDistanceBetweenComponents = 400;
+        this.minDistanceBetweenObstacles = 350;
+        this.minDistanceBetweenComponents = 450;
 
         this.componentMilestones = {
             'CPU': 500,

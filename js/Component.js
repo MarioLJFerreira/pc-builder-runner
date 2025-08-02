@@ -7,8 +7,8 @@ export class Component {
 
         this.x = x;
         this.y = 20;
-        this.width = 35;
-        this.height = 35;
+        this.width = 50;
+        this.height = 50;
         this.speed = 5;
         this.type = type;
 
@@ -16,7 +16,13 @@ export class Component {
         this.componentElement.style.height = `${this.height}px`;
         this.componentElement.style.left = `${this.x}px`;
         this.componentElement.style.bottom = `${this.y}px`;
-        this.componentElement.textContent = this.type;
+        
+        const img = document.createElement('img');
+        img.src = `images/${type}.png`;
+        img.style.width = '100%';
+        img.style.height = '100%';
+        img.style.objectFit = 'contain';
+        this.componentElement.appendChild(img);
 
         this.isCollected = false;
     }
